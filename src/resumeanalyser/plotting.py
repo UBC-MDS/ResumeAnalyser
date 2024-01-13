@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-
 def plot_wordcloud(text):
     """Plot the wordcloud of the input resume text.
     
