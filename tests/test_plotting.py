@@ -1,0 +1,3 @@
+from resumeanalyser.plotting import plot_wordcloud
+from resumeanalyser.plotting import plot_topwords
+from resumeanalyser.plotting import plot_suite

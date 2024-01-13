@@ -1,0 +1,2 @@
+from resumeanalyser.metrics import SimilarityCV
+from resumeanalyser.metrics import SimilaritySpacy
