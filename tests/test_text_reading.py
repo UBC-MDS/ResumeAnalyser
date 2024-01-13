@@ -1,0 +1,3 @@
+from resumeanalyser.text_reading import pdf_to_text
+from resumeanalyser.text_reading import website_to_text
+from resumeanalyser.text_reading import docx_to_text
