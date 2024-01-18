@@ -1,6 +1,7 @@
 # Imports
-from docx import Document
 import os
+from docx import Document
+from PyPDF2 import PdfReader
 
 def docx_to_text(filepath):
     """
@@ -18,18 +19,13 @@ def docx_to_text(filepath):
     """
     # Check that file path ends with docx
     if not filepath.lower().endswith('.docx'):
-        raise ValueError("Invalid file format. Please provide a .docx file.")
+        raise ValueError("Please provide a .docx file. Consider the other functions if you want to use different file formats.")
     document = Document(filepath)
     full_text = []
-
     for paragraph in document.paragraphs:
         full_text.append(paragraph.text)
 
     return '\n'.join(full_text)
-
-# delete later - test
-test_text = docx_to_text('~/git/mds/524_DSCI/resumeanalyser/tests/data/Sample_florist_resume.docx')
-print(test_test)
 
 def pdf_to_text(filepath):
     """
