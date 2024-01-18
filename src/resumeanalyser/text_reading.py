@@ -25,7 +25,7 @@ def docx_to_text(filepath):
     for paragraph in document.paragraphs:
         full_text.append(paragraph.text)
 
-    return '\n'.join(full_text)
+    return str(' '.join(full_text))
 
 def pdf_to_text(filepath):
     """
@@ -41,8 +41,17 @@ def pdf_to_text(filepath):
     >>> pdf_to_text('~/alphabet.pdf')
     'abcdefghijklmnopqrstuvwxyz'
     """
-
-    return text
+    try:
+        with open(filepath, 'rb') as f:
+            reader = PdfReader(f)
+            total_pages = len(pdf_reader.pages)
+            output = []
+            for i in range(total_pages):
+                page = reader.pages[i]
+                output.append(page.extract_text())
+    except Exception as e:
+        print('Error in reading file - if this is not a PDF file, consider using another function')
+    return str(' '.join(output))
 
 def website_to_text(url):
     """
