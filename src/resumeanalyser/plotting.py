@@ -21,7 +21,7 @@ def plot_wordcloud(text):
     >>> txt = 'a b c d e f g a a a a a'
     >>> plot_wordcloud(txt)
     """
-    wc = WordCloud(width = 800, height = 500).generate(text)
+    wc = WordCloud(width = 800, height = 500, random_state=123).generate(text)
     fig = plt.imshow(wc)
     plt.axis("off")
     return fig
@@ -56,7 +56,7 @@ def plot_topwords(text, n=10):
     plt.ylabel("Count")
     return fig
 
-def plot_suite(text, n=10, save=False):
+def plot_suite(text, n=10):
     """Plot the comprehensive plot suite for the input resume text.
     
     Parameters
@@ -82,7 +82,7 @@ def plot_suite(text, n=10, save=False):
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))
     
     # plot the wordcloud plot
-    wc = WordCloud(width = 800, height = 500).generate(text) # default built-in stopwords are used, change it if needed
+    wc = WordCloud(width = 800, height = 500, random_state=123).generate(text) # default built-in stopwords are used, change it if needed
     axes[0].imshow(wc)  # Adjust the colormap as needed
     axes[0].set_title('WordCloud')
     axes[0].axis("off")
@@ -99,10 +99,4 @@ def plot_suite(text, n=10, save=False):
     
     plt.tight_layout()
 
-    # save img
-    if save:
-        plt.savefig('test_img.png')
-        
-    plt.close(fig)
-    
     return fig
