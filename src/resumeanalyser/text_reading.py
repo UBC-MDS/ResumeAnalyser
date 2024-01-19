@@ -1,7 +1,7 @@
 # Imports
 import os
 from docx import Document
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 
 def docx_to_text(filepath):
     """
