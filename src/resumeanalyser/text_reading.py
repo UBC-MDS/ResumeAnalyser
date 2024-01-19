@@ -26,12 +26,11 @@ def docx_to_text(filepath):
             full_text = []
             for paragraph in document.paragraphs:
                 full_text.append(paragraph.text)
-
-            return str(' '.join(full_text))
+                text = str(' '.join(full_text))
+            return text
     except Exception as e:
         print('File reading error.')
-        
-# PDF text extraction has not been debugged
+
 def pdf_to_text(filepath):
     """
     Basic function to extract text from a PDF file, given a specified file path.
