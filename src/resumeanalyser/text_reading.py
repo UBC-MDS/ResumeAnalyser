@@ -27,6 +27,7 @@ def docx_to_text(filepath):
 
     return str(' '.join(full_text))
 
+# PDF text extraction has not been debugged
 def pdf_to_text(filepath):
     """
     Basic function to extract text from a PDF file, given a specified file path.
@@ -41,18 +42,21 @@ def pdf_to_text(filepath):
     >>> pdf_to_text('~/alphabet.pdf')
     'abcdefghijklmnopqrstuvwxyz'
     """
+    if not filepath.lower().endswith('.pdf'):
+        raise ValueError("Please provide a .PDF file. Consider the other functions if you want to use different file formats.")
     try:
         with open(filepath, 'rb') as f:
             reader = PdfReader(f)
-            total_pages = len(pdf_reader.pages)
-            output = []
-            for i in range(total_pages):
-                page = reader.pages[i]
-                output.append(page.extract_text())
+            text = ""
+            for page in reader.pages:
+                text += page.extract_text() + " "
+            # Stripping whitespace
+            text = text.strip()
+            return text
     except Exception as e:
-        print('Error in reading file - if this is not a PDF file, consider using another function')
-    return str(' '.join(output))
+        print('File reading error.')
 
+# Website text extraction has not been implemented yet
 def website_to_text(url):
     """
     Basic function to extract text from a website, given a URL.
