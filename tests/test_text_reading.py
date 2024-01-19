@@ -24,7 +24,7 @@ def test_docx_wrong_path():
         docx_to_text(simple_pdf_path)
 
 def test_docx_heading():
-    """Tests if the text from a Word document."""
+    """Tests if the text formatted as a heading from a Word document is accurately extracted."""
     test_word_text = docx_to_text(fancy_docx_path)
     heading_text = "Heading 1"
     # print(heading_text)
@@ -49,7 +49,7 @@ def test_pdf_wrong_path():
         pdf_to_text(simple_docx_path)
 
 def test_pdf_heading():
-    """Tests if the text from a Word document."""
+    """Tests if the text formatted as a heading from a PDF document is accurately extracted."""
     test_pdf_text = pdf_to_text(fancy_pdf_path)
     heading_text = "Heading 1"
     # print(heading_text)
