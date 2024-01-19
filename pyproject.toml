@@ -8,6 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11.6"
+nltk = "^3.8.1"
 
 [tool.poetry.dev-dependencies]
 
@@ -16,6 +17,8 @@ jupyter = "^1.0.0"
 myst-nb = {version = "^1.0.0", python = "^3.11.6"}
 sphinx-autoapi = "^3.0.0"
 sphinx-rtd-theme = "^2.0.0"
+pytest = "^7.4.4"
+pytest-cov = "^4.1.0"
 
 [tool.semantic_release]
 version_variable = "pyproject.toml:version" # version location
