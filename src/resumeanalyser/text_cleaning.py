@@ -1,3 +1,9 @@
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+
+
 def tokenize(text):
     """
     Tokenize the input text into individual words.
@@ -12,8 +18,7 @@ def tokenize(text):
     >>> tokenize("Hello, world!")
     ['Hello', ',', 'world', '!']
     """
-
-    return
+    return word_tokenize(text)
 
 
 def to_lower(tokens):
@@ -30,8 +35,7 @@ def to_lower(tokens):
     >>> to_lower(['Hello', 'WORLD'])
     ['hello', 'world']
     """
-
-    return
+    return [token.lower() for token in tokens]
 
 
 def remove_stop_words(tokens):
@@ -48,8 +52,8 @@ def remove_stop_words(tokens):
     >>> remove_stop_words(['this', 'is', 'a', 'sample'])
     ['sample']
     """
-
-    return
+    stop_words = set(stopwords.words('english'))
+    return [token for token in tokens if token not in stop_words]
 
 
 def lemmatize(tokens):
@@ -66,8 +70,8 @@ def lemmatize(tokens):
     >>> lemmatize(['running', 'jumps'])
     ['running', 'jump']
     """
-
-    return
+    lemmatizer = WordNetLemmatizer()
+    return [lemmatizer.lemmatize(token) for token in tokens]
 
 
 def clean_text(text):
@@ -85,5 +89,8 @@ def clean_text(text):
     >>> clean_text("This is a sample sentence, showing off the stop words filtration.")
     'sample sentence showing stop word filtration'
     """
-
-    return
+    tokens = tokenize(text)
+    tokens = to_lower(tokens)
+    tokens = remove_stop_words(tokens)
+    tokens = lemmatize(tokens)
+    return ' '.join(tokens)
