@@ -1,8 +1,15 @@
-import string
 import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
+
+# Download NLTK stopwords dataset
+try:
+    nltk.download('stopwords')
+    from nltk.corpus import stopwords
+    from nltk.stem import WordNetLemmatizer
+    from nltk.tokenize import word_tokenize
+    import string
+    print("NLTK modules and data downloaded successfully.")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 
 def tokenize(text):
