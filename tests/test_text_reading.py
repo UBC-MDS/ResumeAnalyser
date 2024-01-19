@@ -1,6 +1,6 @@
 from resumeanalyser.text_reading import docx_to_text
 from resumeanalyser.text_reading import pdf_to_text
-from resumeanalyser.text_reading import website_to_text
+# from resumeanalyser.text_reading import website_to_text
 import pytest
 
 docx_path = "/Users/user/git/mds/524_DSCI/resumeanalyser/tests/data/simple_text.docx"
@@ -20,6 +20,8 @@ def test_docx_wrong_path():
     """Tests if an exception is raised when the wrong file type is given (here, PDF instead of Word)."""
     with pytest.raises(ValueError):
         docx_to_text(pdf_path)
+
+# Test more exceptions?
 
 def test_pdf_extraction():
     """Tests if the text from a PDF document is saved as a string."""

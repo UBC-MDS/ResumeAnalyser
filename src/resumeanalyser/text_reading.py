@@ -20,13 +20,17 @@ def docx_to_text(filepath):
     # Check that file path ends with docx
     if not filepath.lower().endswith('.docx'):
         raise ValueError("Please provide a .docx file. Consider the other functions if you want to use different file formats.")
-    document = Document(filepath)
-    full_text = []
-    for paragraph in document.paragraphs:
-        full_text.append(paragraph.text)
+    try:
+        with open(filepath, 'rb') as f:
+            document = Document(filepath)
+            full_text = []
+            for paragraph in document.paragraphs:
+                full_text.append(paragraph.text)
 
-    return str(' '.join(full_text))
-
+            return str(' '.join(full_text))
+    except Exception as e:
+        print('File reading error.')
+        
 # PDF text extraction has not been debugged
 def pdf_to_text(filepath):
     """
@@ -57,20 +61,20 @@ def pdf_to_text(filepath):
         print('File reading error.')
 
 # Website text extraction has not been implemented yet
-def website_to_text(url):
-    """
-    Basic function to extract text from a website, given a URL.
+# def website_to_text(url):
+#     """
+#     Basic function to extract text from a website, given a URL.
 
-    Parameters:
-    url (str): A string containing the filepath.
+#     Parameters:
+#     url (str): A string containing the filepath.
 
-    Returns:
-    text (str): A string containing the extracted text.
+#     Returns:
+#     text (str): A string containing the extracted text.
 
-    Example:
-    >>> website_to_text('www.alphabet.com')
-    'abcdefghijklmnopqrstuvwxyz'
-    """
+#     Example:
+#     >>> website_to_text('www.alphabet.com')
+#     'abcdefghijklmnopqrstuvwxyz'
+#     """
 
-    return text
+#     return text
 
