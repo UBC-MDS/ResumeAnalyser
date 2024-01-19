@@ -1,13 +1,16 @@
 import nltk
 
-# Download NLTK stopwords dataset
+# Download NLTK WordNet and stopwords datasets
 try:
+    nltk.download('wordnet')
     nltk.download('stopwords')
+
+    from nltk.corpus import wordnet
     from nltk.corpus import stopwords
     from nltk.stem import WordNetLemmatizer
     from nltk.tokenize import word_tokenize
     import string
-    print("NLTK modules and data downloaded successfully.")
+    print("NLTK WordNet and stopwords downloaded successfully.")
 except Exception as e:
     print(f"An error occurred: {e}")
 
