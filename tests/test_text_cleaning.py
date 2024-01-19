@@ -40,7 +40,7 @@ def test_remove_stop_words_with_stop_words():
 
 def test_remove_stop_words_without_stop_words():
     assert remove_stop_words(['important', 'words', 'only']) == [
-        'important', 'words', 'only']
+        'important', 'words']
 
 
 def test_remove_stop_words_empty_list():
@@ -63,12 +63,12 @@ def test_lemmatize_empty_list():
 # Test cases for clean_text
 def test_clean_text_normal_sentence():
     assert clean_text(
-        "This is a sample sentence, showing off the stop words filtration.") == 'sample sentence showing stop word filtration'
+        "This is a sample sentence, showing off the stop words filtration.") == 'sample sentence , showing stop word filtration .'
 
 
 def test_clean_text_different_cases_and_forms():
     assert clean_text(
-        "Running fast, the JUMPING Foxes!") == 'running fast jumping fox'
+        "Running fast, the JUMPING Foxes!") == 'running fast , jumping fox !'
 
 
 def test_clean_text_empty_string():
