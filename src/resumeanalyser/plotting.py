@@ -1,3 +1,7 @@
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+from collections import Counter
+
 def plot_wordcloud(text):
     """Plot the wordcloud of the input resume text.
     
@@ -17,7 +21,10 @@ def plot_wordcloud(text):
     >>> txt = 'a b c d e f g a a a a a'
     >>> plot_wordcloud(txt)
     """
-    return 
+    wc = WordCloud(width = 800, height = 500).generate(text)
+    fig = plt.imshow(wc)
+    plt.axis("off")
+    return fig
 
 def plot_topwords(text, n=10):
     """Plot a bar chart of word counts in the input resume text.
@@ -40,9 +47,16 @@ def plot_topwords(text, n=10):
     >>> txt = 'a b c d e f g a a a a a'
     >>> plot_topwords(txt,n=5)
     """
-    return
+    word_counts = Counter(text.split())
+    top_n_words = word_counts.most_common(n)
+    word, count = zip(*top_n_words)
+    fig = plt.bar(range(n), count)
+    plt.xticks(range(n), labels=word, rotation=45)
+    plt.xlabel("Word")
+    plt.ylabel("Count")
+    return fig
 
-def plot_suite(text, n=10):
+def plot_suite(text, n=10, save=False):
     """Plot the comprehensive plot suite for the input resume text.
     
     Parameters
@@ -63,4 +77,32 @@ def plot_suite(text, n=10):
     >>> txt = 'a b c d e f g a a a a a'
     >>> plot_suite(txt,n=10)
     """
-    return 
+
+    # Create a new figure with two subplots side by side
+    fig, axes = plt.subplots(1, 2, figsize=(10, 5))
+    
+    # plot the wordcloud plot
+    wc = WordCloud(width = 800, height = 500).generate(text) # default built-in stopwords are used, change it if needed
+    axes[0].imshow(wc)  # Adjust the colormap as needed
+    axes[0].set_title('WordCloud')
+    axes[0].axis("off")
+
+    # plot the topword barchart
+    word_counts = Counter(text.split())
+    top_n_words = word_counts.most_common(10)
+    word, count = zip(*top_n_words)
+    axes[1].bar(range(10), count)
+    axes[1].set_xticks(range(10), labels=word, rotation=45)
+    axes[1].set_xlabel("Word")
+    axes[1].set_ylabel("Count")
+    axes[1].set_title('Top Frequency Words')
+    
+    plt.tight_layout()
+
+    # save img
+    if save:
+        plt.savefig('test_img.png')
+        
+    plt.close(fig)
+    
+    return fig
