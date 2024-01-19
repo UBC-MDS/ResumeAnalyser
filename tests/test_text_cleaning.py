@@ -1,9 +1,28 @@
 import pytest
 from resumeanalyser.text_cleaning import tokenize
+from resumeanalyser.text_cleaning import remove_punctuation
 from resumeanalyser.text_cleaning import to_lower
 from resumeanalyser.text_cleaning import remove_stop_words
 from resumeanalyser.text_cleaning import lemmatize
 from resumeanalyser.text_cleaning import clean_text
+
+
+# Test cases for remove_punctuation
+def test_remove_punctuation_with_punctuation():
+    assert remove_punctuation("Hello, world!") == "Hello world"
+
+
+def test_remove_punctuation_with_special_characters():
+    assert remove_punctuation(
+        "Email@Example.com #Testing!") == "EmailExamplecom Testing"
+
+
+def test_remove_punctuation_without_punctuation():
+    assert remove_punctuation("Hello world") == "Hello world"
+
+
+def test_remove_punctuation_empty_string():
+    assert remove_punctuation("") == ""
 
 
 # Test cases for tokenize
@@ -63,12 +82,12 @@ def test_lemmatize_empty_list():
 # Test cases for clean_text
 def test_clean_text_normal_sentence():
     assert clean_text(
-        "This is a sample sentence, showing off the stop words filtration.") == 'sample sentence , showing stop word filtration .'
+        "This is a sample sentence, showing off the stop words filtration.") == 'sample sentence showing stop word filtration'
 
 
 def test_clean_text_different_cases_and_forms():
     assert clean_text(
-        "Running fast, the JUMPING Foxes!") == 'running fast , jumping fox !'
+        "Running fast, the JUMPING Foxes!") == 'running fast jumping fox'
 
 
 def test_clean_text_empty_string():

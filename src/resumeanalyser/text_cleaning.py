@@ -1,3 +1,4 @@
+import string
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -19,6 +20,24 @@ def tokenize(text):
     ['Hello', ',', 'world', '!']
     """
     return word_tokenize(text)
+
+
+def remove_punctuation(text):
+    """
+    Remove punctuation and special characters from the input text.
+
+    Parameters:
+    text (str): A string containing the text to be processed.
+
+    Returns:
+    str: The text with all punctuation and special characters removed.
+
+    Example:
+    >>> remove_punctuation("Hello, world!")
+    'Hello world'
+    """
+    translator = str.maketrans('', '', string.punctuation)
+    return text.translate(translator)
 
 
 def to_lower(tokens):
@@ -89,6 +108,8 @@ def clean_text(text):
     >>> clean_text("This is a sample sentence, showing off the stop words filtration.")
     'sample sentence showing stop word filtration'
     """
+
+    text = remove_punctuation(text)
     tokens = tokenize(text)
     tokens = to_lower(tokens)
     tokens = remove_stop_words(tokens)
