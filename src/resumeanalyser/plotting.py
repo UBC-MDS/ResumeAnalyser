@@ -21,6 +21,12 @@ def plot_wordcloud(text):
     >>> txt = 'a b c d e f g a a a a a'
     >>> plot_wordcloud(txt)
     """
+    if not text:
+        raise ValueError("Input text should not be None.")
+    
+    if not isinstance(text, str):
+        raise TypeError("Input text should be String.")
+    
     wc = WordCloud(width = 800, height = 500, random_state=123).generate(text)
     fig = plt.imshow(wc)
     plt.axis("off")
@@ -47,6 +53,15 @@ def plot_topwords(text, n=10):
     >>> txt = 'a b c d e f g a a a a a'
     >>> plot_topwords(txt,n=5)
     """
+    if not text:
+        raise ValueError("Input text should not be None.")
+    
+    if not isinstance(text, str):
+        raise TypeError("Input text should be String.")
+    
+    if not isinstance(n, int) or n < 2:
+        raise ValueError("Input n should be an integer bigger than 1")
+    
     word_counts = Counter(text.split())
     top_n_words = word_counts.most_common(n)
     word, count = zip(*top_n_words)
@@ -77,7 +92,15 @@ def plot_suite(text, n=10):
     >>> txt = 'a b c d e f g a a a a a'
     >>> plot_suite(txt,n=10)
     """
+    if not text:
+        raise ValueError("Input text should not be None.")
+    
+    if not isinstance(text, str):
+        raise TypeError("Input text should be String.")
 
+    if not isinstance(n, int) or n < 2:
+        raise ValueError("Input n should be an integer bigger than 1")
+    
     # Create a new figure with two subplots side by side
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))
     

@@ -3,9 +3,41 @@ from resumeanalyser.plotting import plot_topwords
 from resumeanalyser.plotting import plot_suite
 from matplotlib.testing.decorators import image_comparison
 import numpy as np
+import pytest
+
+test_text = 'I am going to fill in a test text here the the the a a a a'
+### Edge Case Error Raising
+def test_plot_wordcloud_edge_error():
+    with pytest.raises(ValueError):
+        plot_wordcloud("")
+    with pytest.raises(ValueError):
+        plot_wordcloud(None)
+    with pytest.raises(TypeError):
+        plot_wordcloud(999)
+
+def test_plot_topwords_edge_error():
+    with pytest.raises(ValueError):
+        plot_topwords("")
+    with pytest.raises(ValueError):
+        plot_topwords(None)
+    with pytest.raises(TypeError):
+        plot_topwords(999)
+    with pytest.raises(ValueError):
+        plot_topwords(test_text,1)
+
+def test_plot_suite_edge_error():
+    with pytest.raises(ValueError):
+        plot_suite("")
+    with pytest.raises(ValueError):
+        plot_suite(None)
+    with pytest.raises(TypeError):
+        plot_suite(999)
+    with pytest.raises(ValueError):
+        plot_topwords(test_text,'2')
+    with pytest.raises(ValueError):
+        plot_topwords(test_text,0)
 
 ### Image Comparison Test
-test_text = 'I am going to fill in a test text here the the the a a a a'
 @image_comparison(baseline_images=['img_wordcloud'], remove_text=True,
                   extensions=['png'], style='mpl20')
 def test_plot_wordcloud_with_text():
