@@ -38,7 +38,25 @@ $ pip install resumeanalyser
 
 ## Usage
 
-- TODO
+`resumeanalyser` provides various functionalities. It covers text extraction from both PDF and docx documents, including handling of formatted text. The text cleaning functions include steps like removing punctuation, tokenization, converting to lower case, removing stop words, and lemmatization, which can be applied step-by-step or using the clean_text function for convenience. For comparing texts, it offers functions for both syntactic and semantic text matching. Additionally, the documentation provides examples of using plotting functions, such as creating word clouds and plotting top-frequency words. This comprehensive guide is designed to help users effectively utilize the resumeanalyser package for analyzing and visualizing resume data.
+
+```python
+from resumeanalyser.text_reading import pdf_to_text, docx_to_text
+from resumeanalyser.text_cleaning import remove_punctuation, tokenize, to_lower, lemmatize, clean_text
+from resumeanalyser.metrics import SimilarityCV
+from resumeanalyser.plotting import plot_wordcloud, plot_topwords, plot_suite
+
+file_path_1 = "test.txt"  # path to your file
+file_path_2 = "test2.txt"  # path to your file
+sample_pdf_text = pdf_to_text(file_path_1)
+sample_docx_text = docx_to_text(file_path_2)
+cleaned_text_1 = clean_text(sample_pdf_text)
+cleaned_text_2 = clean_text(sample_docx_text)
+literal_match_score = SimilarityCV(cleaned_text_1, cleaned_text_2)
+fig1 = plot_wordcloud(cleaned_text_1)
+fig2 = plot_topwords(cleaned_text_1)
+fig3 = plot_suite(cleaned_text_1)
+```
 
 ## Contributing
 
