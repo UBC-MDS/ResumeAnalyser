@@ -6,6 +6,7 @@
 :hidden:
 
 example.ipynb
+vignette.ipynb
 changelog.md
 contributing.md
 conduct.md
