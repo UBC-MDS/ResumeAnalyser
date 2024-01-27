@@ -21,7 +21,7 @@ jobs:
         uses: snok/install-poetry@v1
 
       - name: Install package
-        run: poetry install
+        run: poetry install --with dev
 
       - name: Test with pytest
         run: poetry run pytest tests/ --cov=resumeanalyser --cov-report=xml
