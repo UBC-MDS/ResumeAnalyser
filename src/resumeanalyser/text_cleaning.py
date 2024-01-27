@@ -1,4 +1,7 @@
 import nltk
+import re
+import string
+
 
 # Download NLTK WordNet and stopwords datasets
 try:
@@ -9,10 +12,30 @@ try:
     from nltk.corpus import stopwords
     from nltk.stem import WordNetLemmatizer
     from nltk.tokenize import word_tokenize
-    import string
+
     print("NLTK WordNet and stopwords downloaded successfully.")
 except Exception as e:
     print(f"An error occurred: {e}")
+
+
+def remove_punctuation(text):
+    """
+    Remove punctuation and special characters from the input text.
+
+    Parameters:
+    text (str): A string containing the text to be processed.
+
+    Returns:
+    str: The text with all punctuation and special characters removed.
+
+    Example:
+    >>> remove_punctuation("Hello, world!")
+    'Hello world'
+    """
+    cleaned_text = re.sub('[^A-Za-z]', ' ', text)
+    cleaned_text = re.sub(' +', ' ', cleaned_text)
+
+    return cleaned_text
 
 
 def tokenize(text):
@@ -30,24 +53,6 @@ def tokenize(text):
     ['Hello', ',', 'world', '!']
     """
     return word_tokenize(text)
-
-
-def remove_punctuation(text):
-    """
-    Remove punctuation and special characters from the input text.
-
-    Parameters:
-    text (str): A string containing the text to be processed.
-
-    Returns:
-    str: The text with all punctuation and special characters removed.
-
-    Example:
-    >>> remove_punctuation("Hello, world!")
-    'Hello world'
-    """
-    translator = str.maketrans('', '', string.punctuation)
-    return text.translate(translator)
 
 
 def to_lower(tokens):

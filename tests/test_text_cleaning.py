@@ -9,12 +9,12 @@ from resumeanalyser.text_cleaning import clean_text
 
 # Test cases for remove_punctuation
 def test_remove_punctuation_with_punctuation():
-    assert remove_punctuation("Hello, world!") == "Hello world"
+    assert remove_punctuation("Hello, world!") == "Hello world "
 
 
 def test_remove_punctuation_with_special_characters():
     assert remove_punctuation(
-        "Email@Example.com #Testing!") == "EmailExamplecom Testing"
+        "Email@Example.com #Tes●ting!") == "Email Example com Tes ting "
 
 
 def test_remove_punctuation_without_punctuation():
