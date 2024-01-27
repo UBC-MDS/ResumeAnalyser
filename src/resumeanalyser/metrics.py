@@ -55,11 +55,20 @@ def SimilaritySpacy(text1, text2):
     if not isinstance(text1, str) or not isinstance(text2, str):
         raise ValueError("Both inputs must be strings.")
 
-    if "en_core_web_md" not in spacy.cli.info():
-        print("Downloading 'en_core_web_md' model...")
-        spacy.cli.download("en_core_web_md")
+    # Specify the model name you want to check or download
+    model_name = "en_core_web_md"
+
+    # Check if the spaCy model is installed
+    try:
+        nlp = spacy.load(model_name)
+        print(f"{model_name} is already installed.")
+    except OSError:
+        print(f"{model_name} is not installed. Downloading...")
+        # Download the spaCy model
+        spacy.cli.download(model_name)
+        print(f"{model_name} has been downloaded and installed.")
     # Load the NLP model
-    nlp = spacy.load("en_core_web_md")
+    nlp = spacy.load(model_name)
 
     text1 = nlp(text1)
     text2 = nlp(text2)
