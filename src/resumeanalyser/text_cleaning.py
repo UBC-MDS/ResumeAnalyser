@@ -1,20 +1,21 @@
 import nltk
 import re
-import string
+import os
 
 
 # Download NLTK WordNet and stopwords datasets
 try:
-    nltk.download('wordnet')
-    nltk.download('stopwords')
-    nltk.download('punkt')
+    # Redirecting output to null
+    with open(os.devnull, "w") as f:
+        nltk.download("wordnet", quiet=True, stream=f)
+        nltk.download("stopwords", quiet=True, stream=f)
+        nltk.download("punkt", quiet=True, stream=f)
 
     from nltk.corpus import wordnet
     from nltk.corpus import stopwords
     from nltk.stem import WordNetLemmatizer
     from nltk.tokenize import word_tokenize
 
-    print("NLTK WordNet and stopwords downloaded successfully.")
 except Exception as e:
     print(f"An error occurred: {e}")
 
