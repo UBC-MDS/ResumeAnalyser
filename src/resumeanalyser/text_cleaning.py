@@ -7,6 +7,7 @@ import string
 try:
     nltk.download('wordnet')
     nltk.download('stopwords')
+    nltk.download('punkt')
 
     from nltk.corpus import wordnet
     from nltk.corpus import stopwords
