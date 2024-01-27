@@ -4,9 +4,20 @@
 ```{toctree}
 :maxdepth: 1
 :hidden:
-
-example.ipynb
+:caption: User Guide
 vignette.ipynb
+```
+```{toctree}
+:maxdepth: 1
+:hidden:
+:caption: Example Usage
+example.ipynb
+```
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+:caption: Developer Notes
 changelog.md
 contributing.md
 conduct.md
