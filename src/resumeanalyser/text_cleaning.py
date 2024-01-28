@@ -5,11 +5,9 @@ import os
 
 # Download NLTK WordNet and stopwords datasets
 try:
-    # Redirecting output to null
-    with open(os.devnull, "w") as f:
-        nltk.download("wordnet", quiet=True, stream=f)
-        nltk.download("stopwords", quiet=True, stream=f)
-        nltk.download("punkt", quiet=True, stream=f)
+    nltk.download("wordnet", quiet=True)
+    nltk.download("stopwords", quiet=True)
+    nltk.download("punkt", quiet=True)
 
     from nltk.corpus import wordnet
     from nltk.corpus import stopwords
