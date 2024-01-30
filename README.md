@@ -2,6 +2,8 @@
 
 [![Documentation Status](https://readthedocs.org/projects/resume-analyser/badge/?version=latest)](https://resume-analyser.readthedocs.io/en/latest)
 
+[![ci-cd](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml)
+
 The ResumeAnalyser package is a comprehensive toolkit designed for automated and efficient parsing, analysis, and evaluation of resumes. Leveraging advanced algorithms, it extracts key information like educational background, professional experience, skills, and certifications from a variety of resume formats. This package also includes features for ranking candidates based on customizable criteria, making it an indispensable tool for HR professionals and recruiters seeking to streamline the hiring process. Its intuitive API and compatibility with multiple programming languages ensure easy integration into existing HR systems, significantly enhancing recruitment workflows.
 
 Given the specificity of the goals of our package, we have not come across many popular Python packages which offer exactly the same functionalities we aim to offer. We found one [package which also aims to extract information from resumes](https://pypi.org/project/resume-parser/), but this package does not appear to offer functions to analyse the text and visualise the results.
