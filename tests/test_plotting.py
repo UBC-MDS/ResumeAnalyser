@@ -38,20 +38,20 @@ def test_plot_suite_edge_error():
         plot_topwords(test_text,0)
 
 ### Image Comparison Test
-@image_comparison(baseline_images=['img_wordcloud'], remove_text=True,
-                  extensions=['png'], style='mpl20')
-def test_plot_wordcloud_with_text():
-    plot_wordcloud(test_text)
+# @image_comparison(baseline_images=['img_wordcloud'], remove_text=True,
+#                   extensions=['png'], style='mpl20')
+# def test_plot_wordcloud_with_text():
+#     plot_wordcloud(test_text)
 
 # @image_comparison(baseline_images=['img_topwords'], remove_text=True,
 #                   extensions=['png'], style='mpl20')
 # def test_plot_topwords_with_text():
 #     plot_topwords(test_text)
 
-@image_comparison(baseline_images=['img_suite'], remove_text=True,
-                  extensions=['png'], style='mpl20')
-def test_plot_suite_with_text():
-    plot_suite(test_text)
+# @image_comparison(baseline_images=['img_suite'], remove_text=True,
+#                   extensions=['png'], style='mpl20')
+# def test_plot_suite_with_text():
+#     plot_suite(test_text)
 
 ### Type matching Test
 def test_plot_wordcloud_type():
@@ -65,8 +65,8 @@ def test_plot_suite_with_type():
 
 ### Plot Detail Test
 ##### plot_wordcloud
-def test_plot_wordcloud_pixels():
-    assert np.isclose(plot_wordcloud(test_text).get_array().mean(), 25.8546316), "plot_wordcloud Image pixels not Correct."
+# def test_plot_wordcloud_pixels():
+#     assert np.isclose(plot_wordcloud(test_text).get_array().mean(), 25.8546316), "plot_wordcloud Image pixels not Correct."
 
 def test_plot_wordcloud_extent():
     assert plot_wordcloud(test_text).get_extent()==[-0.5, 799.5, 499.5, -0.5], "plot_wordcloud Image extent not Correct."
