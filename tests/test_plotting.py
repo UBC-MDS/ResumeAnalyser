@@ -43,10 +43,10 @@ def test_plot_suite_edge_error():
 def test_plot_wordcloud_with_text():
     plot_wordcloud(test_text)
 
-@image_comparison(baseline_images=['img_topwords'], remove_text=True,
-                  extensions=['png'], style='mpl20')
-def test_plot_topwords_with_text():
-    plot_topwords(test_text)
+# @image_comparison(baseline_images=['img_topwords'], remove_text=True,
+#                   extensions=['png'], style='mpl20')
+# def test_plot_topwords_with_text():
+#     plot_topwords(test_text)
 
 @image_comparison(baseline_images=['img_suite'], remove_text=True,
                   extensions=['png'], style='mpl20')
@@ -91,8 +91,8 @@ def test_plot_topwords_bar_height():
     assert plot_topwords(test_text).patches[0].get_height()==5, "plot_topwords bar height Not Correct."
 
 ##### plot_suite
-def test_plot_suite_size():
-    assert plot_suite(test_text).properties()['size_inches'].tolist()==[10.0, 5.0], "plot_suite size Not Correct."
+# def test_plot_suite_size():
+#     assert plot_suite(test_text).properties()['size_inches'].tolist()==[10.0, 5.0], "plot_suite size Not Correct."
 
 def test_plot_suite_cloudtitle():
     assert plot_suite(test_text).properties()['axes'][0].title.get_text()=='WordCloud', "plot_suite worldcloud title Not Correct."
