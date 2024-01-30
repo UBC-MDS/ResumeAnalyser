@@ -52,11 +52,11 @@ conda activate resumeanalyser
 poetry install
 ```
 
-### Future update
+### Future Version
 
-Once this package is published on PyPi, run the following command to intall autopredictor in the chosen environment:
+This package will be published on PyPI soon. It will be possbile to run the following command to intall resumeanalyser:
 ```bash
-$ pip install autopredictor
+$ pip install resumeanalyser
 ```
 
 ## Usage
