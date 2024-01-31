@@ -2,6 +2,13 @@
 
 
 
+## v1.0.2 (2024-01-31)
+
+### Fix
+
+* fix: Shortened Summary ([`d5fb73d`](https://github.com/UBC-MDS/resumeanalyser/commit/d5fb73d745acfbdd3326879fa4ceca5c8f98a27e))
+
+
 ## v1.0.1 (2024-01-31)
 
 ### Fix
