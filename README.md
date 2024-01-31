@@ -84,13 +84,23 @@ fig2 = plot_topwords(cleaned_text_1)
 fig3 = plot_suite(cleaned_text_1)
 ```
 
+## Testing
+To test this package, please run the following command from the root directory of the repository:
+```
+pytest tests/
+```
+To check for branch coverage use the following command:
+```
+pytest --cov-branch --cov=resumeanalyser
+```
+
 ## Contributing
 
 Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
 
 ## License
 
-`resumeanalyser` was created by group14. It is licensed under the terms of the MIT license.
+`resumeanalyser` was created by "Prabhjit Thind, Gretel Tan, Xiangshen Yu, Wenyu Nie". It is licensed under the terms of the MIT license.
 
 ## Credits
 
