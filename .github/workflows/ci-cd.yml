@@ -48,7 +48,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     # Set up operating system
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     # Define job steps
     steps:
