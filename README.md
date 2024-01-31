@@ -69,8 +69,8 @@ from resumeanalyser.text_cleaning import remove_punctuation, tokenize, to_lower,
 from resumeanalyser.metrics import SimilarityCV
 from resumeanalyser.plotting import plot_wordcloud, plot_topwords, plot_suite
 
-file_path_1 = "test.txt"  # path to your file
-file_path_2 = "test2.txt"  # path to your file
+file_path_1 = "test.pdf"  
+file_path_2 = "test2.docx" 
 sample_pdf_text = pdf_to_text(file_path_1)
 sample_docx_text = docx_to_text(file_path_2)
 cleaned_text_1 = clean_text(sample_pdf_text)
