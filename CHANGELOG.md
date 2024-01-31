@@ -2,6 +2,15 @@
 
 
 
+## v1.0.3 (2024-01-31)
+
+### Fix
+
+* fix: authors ([`3e2782f`](https://github.com/UBC-MDS/resumeanalyser/commit/3e2782f3f2fd729631da54f702b8ad9e2d75110c))
+
+* fix: shortened summary on pyproject.toml ([`d42c4c4`](https://github.com/UBC-MDS/resumeanalyser/commit/d42c4c4cf95ed0bf78d7be1f06c9ea33d38e7eb8))
+
+
 ## v1.0.2 (2024-01-31)
 
 ### Fix

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "resumeanalyser"
-version = "3.0.2"
+version = "1.0.3"
 description = "The ResumeAnalyser package is a comprehensive toolkit designed for automated and efficient parsing, analysis, and evaluation of resumes."
 authors = ["Xiangshen Yu", "Gretel Tan", "Wenyu Nie", "Prabhjit Thind"]
 license = "MIT"
