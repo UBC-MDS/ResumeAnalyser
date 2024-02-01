@@ -1,4 +1,5 @@
 # resumeanalyser
+![DALL·E 2024-02-01 10 08 35 - Design a wide banner for the GitHub README file of the 'Resume Analyzer' project, ensuring correct spelling of 'Resume Analyzer'  Integrate the previo](https://github.com/UBC-MDS/resumeanalyser/assets/143786716/983ca55f-896f-4e33-b647-835210c4f75b)
 
 [![Documentation Status](https://readthedocs.org/projects/resume-analyser/badge/?version=latest)](https://resume-analyser.readthedocs.io/en/latest) [![ci-cd](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml)
 
