@@ -2,7 +2,7 @@
 
 ![](https://github.com/UBC-MDS/resumeanalyser/assets/143786716/983ca55f-896f-4e33-b647-835210c4f75b)
 
-[![Documentation Status](https://readthedocs.org/projects/resume-analyser/badge/?version=latest)](https://resume-analyser.readthedocs.io/en/latest) [![ci-cd](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml)
+[![Documentation Status](https://readthedocs.org/projects/resume-analyser/badge/?version=latest)](https://resume-analyser.readthedocs.io/en/latest) [![ci-cd](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/UBC-MDS/resumeanalyser/actions/workflows/ci-cd.yml) ![Python 3.11.6](https://img.shields.io/badge/python-3.11.6-blue.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![version](https://img.shields.io/github/v/release/UBC-MDS/resumeanalyser) ![release](https://img.shields.io/github/release-date/UBC-MDS/resumeanalyser) [![codecov](https://codecov.io/gh/UBC-MDS/resumeanalyser/branch/main/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/resumeanalyser) [![Project Status: Active – Stable, usable, and actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 The ResumeAnalyser package is a comprehensive toolkit designed for automated and efficient parsing, analysis, and evaluation of resumes. Leveraging advanced algorithms, it extracts key information like educational background, professional experience, skills, and certifications from a variety of resume formats.
 
@@ -61,14 +61,18 @@ In order to install the developer version of this package from GitHub, please ru
 ``` bash
 git clone https://github.com/UBC-MDS/resumeanalyser.git
 ```
-
-2.  Install poetry for the purpose of managing the developing version of this pacakge [instructions](https://python-poetry.org/docs/#installation).
-
-3.  Run the following commands from the project root directory to create a virtual environment and install resumeanalyser through poetry:
+2. Create and activate a new environment for this package, you might need to [install conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) for this purpose.
 
 ``` bash
 conda create --name resumeanalyser -f environment.yml
 conda activate resumeanalyser
+```
+
+3.  Install poetry for the purpose of managing the developing version of this pacakge [instructions](https://python-poetry.org/docs/#installation).
+
+4.  Run the following commands from the project root directory to install resumeanalyser through poetry:
+
+``` bash
 poetry install
 ```
 
