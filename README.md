@@ -61,10 +61,16 @@ In order to install the developer version of this package from GitHub, please ru
 ``` bash
 git clone https://github.com/UBC-MDS/resumeanalyser.git
 ```
+2. Create and activate a new environment for running and developing this package, you might need to [install conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) for this purpose.
 
-2.  Install poetry for the purpose of managing the developing version of this pacakge [instructions](https://python-poetry.org/docs/#installation).
+``` bash
+conda create --name resumeanalyser -f environment.yml
+conda activate resumeanalyser
+```
 
-3.  Run the following commands from the project root directory to create a virtual environment and install resumeanalyser through poetry:
+3.  Install poetry for the purpose of managing the developing version of this pacakge [instructions](https://python-poetry.org/docs/#installation).
+
+4.  Run the following commands from the project root directory to install resumeanalyser through poetry:
 
 ``` bash
 conda create --name resumeanalyser -f environment.yml
