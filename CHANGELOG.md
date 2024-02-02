@@ -2,6 +2,42 @@
 
 
 
+## v1.0.4 (2024-02-02)
+
+### Fix
+
+* fix: Feedback addressed - edited error message for text extraction functions, updated readme installation instructions, updated readme function information ([`e9f3d15`](https://github.com/UBC-MDS/resumeanalyser/commit/e9f3d1583368157ffc721d08ff86ce03891ede3b))
+
+### Unknown
+
+* Merge pull request #77 from UBC-MDS/update_docs
+
+Update docs ([`3a46671`](https://github.com/UBC-MDS/resumeanalyser/commit/3a46671020b05ab2d355fac11665bfe26f38d8d2))
+
+* Added installation instructions and description for each text reading function ([`9a12eb5`](https://github.com/UBC-MDS/resumeanalyser/commit/9a12eb5d697c805689dfe699c015133a96a00093))
+
+* Added more descriptive error message ([`cd142d7`](https://github.com/UBC-MDS/resumeanalyser/commit/cd142d72c1521bba17852d68926ea5412a11da67))
+
+* Merge pull request #76 from UBC-MDS/75-adding-some-visuals
+
+75 adding some visuals [ready for merge] ([`a5530e7`](https://github.com/UBC-MDS/resumeanalyser/commit/a5530e78181f5ebfff1b76ad64d8d8891a661de5))
+
+* changing logo ([`3996db4`](https://github.com/UBC-MDS/resumeanalyser/commit/3996db4d7a324c91c9a5f558fb67f06f83ca41d5))
+
+* adding logo and readme banner ([`4d9a346`](https://github.com/UBC-MDS/resumeanalyser/commit/4d9a346f48889a552f8e4c5aad582eff2d54923d))
+
+* Update README.md with banner ([`f7109af`](https://github.com/UBC-MDS/resumeanalyser/commit/f7109afbb241baa6b90efb05650db547e346311b))
+
+* Merge pull request #74 from UBC-MDS/Prabh95-readme-update
+
+Update README.md ([`f7cc601`](https://github.com/UBC-MDS/resumeanalyser/commit/f7cc60185e7ada00b7f79098f915425796c420a2))
+
+* Update README.md
+
+1. Names added under License as done by other groups.
+2. Added the pytest commands. ([`f1c81b4`](https://github.com/UBC-MDS/resumeanalyser/commit/f1c81b4942f5fe65baa71005138aa15bf960d51f))
+
+
 ## v1.0.3 (2024-01-31)
 
 ### Fix
