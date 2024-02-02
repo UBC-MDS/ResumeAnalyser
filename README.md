@@ -50,7 +50,7 @@ pip install resumeanalyser
 
 ### Developer Version Installation
 
-In order to install the version of this package from GitHub, please run the instructions provided below.
+In order to install the developer version of this package from GitHub, please run the instructions provided below.
 
 1.  Clone this repository:
 
