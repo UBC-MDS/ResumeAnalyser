@@ -44,14 +44,15 @@ Our project has 4 parts - the extraction of text from different types of documen
 
 This package has now been published on PyPI and TestPyPI. Please make sure your Python version is >=3.11.6 and <4.0.0 before installing the package.
 
+### For User
+
 To install the package using PyPI you run the following pip command:
 
 ```         
 pip install resumeanalyser
 ```
 
-
-### Developer Version Installation
+### For Developer
 
 In order to install the developer version of this package from GitHub, please run the instructions provided below.
 
@@ -66,7 +67,7 @@ git clone https://github.com/UBC-MDS/resumeanalyser.git
 3.  Run the following commands from the project root directory to create a virtual environment and install resumeanalyser through poetry:
 
 ``` bash
-conda create --name resumeanalyser python=3.11.6 -y
+conda create --name resumeanalyser -f environment.yml
 conda activate resumeanalyser
 poetry install
 ```
