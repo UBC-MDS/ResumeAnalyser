@@ -19,7 +19,7 @@ def docx_to_text(filepath):
     """
     # Check that file path ends with docx
     if not filepath.lower().endswith('.docx'):
-        raise ValueError("Please provide a .docx file. Consider the other functions if you want to use different file formats.")
+        raise ValueError("Please provide a .docx file. Consider using pdf_to_text if you are using a PDF.")
     try:
         with open(filepath, 'rb') as f:
             document = Document(filepath)
@@ -46,7 +46,7 @@ def pdf_to_text(filepath):
     'abcdefghijklmnopqrstuvwxyz'
     """
     if not filepath.lower().endswith('.pdf'):
-        raise ValueError("Please provide a .PDF file. Consider the other functions if you want to use different file formats.")
+        raise ValueError("Please provide a .pdf file. Consider using docx_to_text if you are using a docx document.")
     try:
         with open(filepath, 'rb') as f:
             reader = PdfReader(f)
