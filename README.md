@@ -42,11 +42,14 @@ Our project has 4 parts - the extraction of text from different types of documen
 
 ## Installation
 
-This package has now been published on PyPI and TestPyPI. To install the package, please run the following code:
+This package has now been published on PyPI and TestPyPI. Please make sure your Python version is >=3.11.6 and <4.0.0 before installing the package.
+
+To install the package using PyPI you run the following pip command:
 
 ```         
 pip install resumeanalyser
 ```
+
 
 ### Developer Version Installation
 
